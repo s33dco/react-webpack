@@ -7,8 +7,10 @@ module.exports = env => {
 	let envConfig;
 	if (env === 'prod') {
 		envConfig = prodConfig;
+		console.log('** building for production');
 	} else {
 		envConfig = devConfig;
+		console.log('** building for development');
 	}
 	return webpackMerge(commonConfig, envConfig);
 };

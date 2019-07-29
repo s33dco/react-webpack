@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 const { appEntry } = require('./common-paths');
 
 const config = {
@@ -37,7 +38,10 @@ const config = {
 			template: './src/index.html',
 			filename: './index.html'
 		}),
-		new CopyWebpackPlugin([{ from: './src/static/images', to: './images' }])
+		new CopyWebpackPlugin([{ from: './src/static/images', to: './images' }]),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+		})
 	]
 };
 module.exports = config;
