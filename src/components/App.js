@@ -27,11 +27,13 @@ const App = () => {
 		<div className="container">
 			<Router>
 				<Header />
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/other-page" component={AsyncOtherPage} />
-					<Route component={AsyncNoMatch} />
-				</Switch>
+				<main className="main">
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/other-page" component={AsyncOtherPage} />
+						<Route component={AsyncNoMatch} />
+					</Switch>
+				</main>
 				<Footer />
 			</Router>
 		</div>

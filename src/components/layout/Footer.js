@@ -1,10 +1,11 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 const Footer = () => (
-	<footer>
-		<div className="footer__copyright">
-			<p>s33d</p>
-		</div>
+	<footer className="footer">
+		<p>
+			s33d © <Moment format="YYYY">{Date.now()}</Moment>
+		</p>
 	</footer>
 );
 

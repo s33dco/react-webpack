@@ -14,6 +14,11 @@ const config = {
 	module: {
 		rules: [
 			{
+				test: /\.(js|jsx)$/,
+				use: 'react-hot-loader/webpack',
+				include: /node_modules/
+			},
+			{
 				test: /\.s?css$/,
 				use: [
 					{
@@ -33,11 +38,6 @@ const config = {
 						options: { sourceMap: true }
 					}
 				]
-			},
-			{
-				test: /\.(js|jsx)$/,
-				use: 'react-hot-loader/webpack',
-				include: /node_modules/
 			}
 		]
 	},
